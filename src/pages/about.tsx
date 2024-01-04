@@ -32,7 +32,7 @@ export default function Home() {
 
       <p className="bg-white mt-3 text-gray-purple text-left">
       <b className="bg-white text-left">Parents</b> are invited to share their experiences with their children&apos;s 
-      schools and reflections on their experience with these school communities. {' '.repeat(50)}
+      schools and reflections on their experience with these school communities. 
       </p>
 
       <p className="bg-white mt-3 text-gray-purple">

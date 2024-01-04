@@ -103,7 +103,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-brown5 w-84 bg-transparent text-center">
-              We value protecting participant information and maintaining privacy. We take several steps to ensure participants' confidentiality in adherence to Brown University’s Institutional Review Board.
+              We value protecting participant information and maintaining privacy. We take several steps to ensure participants&apos; confidentiality in adherence to Brown University&apos;s Institutional Review Board.
             </h1>
           </div>
 
