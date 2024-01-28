@@ -1,13 +1,12 @@
-import Footer from "@/components/footer";
 import FooterESP from "@/components/footerESP";
-import NavigationBar from "@/components/navigationBar";
+import NavigationBarESP from "@/components/navigationBarESP";
 import ParentsSurveyButtonESP from "@/components/parentsSurveyBtnESP";
 import PrincipalsAndTeachersSurveyButtonESP from "@/components/principalsTeachersSurveyBtnESP";
 
 export default function Home() {
   return (
     <div className="bg-gray">
-      <NavigationBar />
+      <NavigationBarESP />
 
       <div className="flex-col bg-white w-11/12 h-full m-auto mt-7 flex block justify-center items-center py-10 px-36 inline-block">
 
