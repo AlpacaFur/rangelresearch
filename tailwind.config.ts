@@ -37,8 +37,10 @@ const config: Config = {
         'bold': '700',
         'extrabold': '800',
         'black:': '900',
+      },
+      flex: {
+        '2': '2 2 0%'
       }
-
     },
   },
   plugins: [],
