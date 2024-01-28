@@ -40,69 +40,68 @@ const pc: Member[] = [
 
 const TeamBioPage: React.FC = () => {
   return (
-    <div className="container mx-auto my-8">
+    <div className="">
       <NavigationBar />
-      <div className="mb-8" style={{ marginBottom: "48px" }} />
-      <h1 className="text-4xl text-brown5 text-center font-semibold mb-8">
-        Our Team
-      </h1>
-      <div className="bg-white p-8 mb-8">
-        <h2 className="text-3xl font-semibold mb-6 bg-white text-gray-purple">
-          Principal Investigator
-        </h2>
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
-        {pi.map((member, index) => (
-          <TeamMember key={index} member={member} />
-        ))}
-      </div>
-      <div className="mb-8" style={{ marginBottom: "48px" }} />
-      <hr className="border-t border-orange-700 mb-8" />
-      <div className="mb-8" style={{ marginBottom: "48px" }} />
-      <div className="bg-white p-8 mb-8">
-        <h2 className="text-3xl font-semibold mb-6 bg-white text-gray-purple">
-          Research Assistants
-        </h2>
-        {team.map((member, index) => (
-          <TeamMember key={index} member={member} />
-        ))}
-      </div>
-      <div className="mb-8" style={{ marginBottom: "48px" }} />
-      <hr className="border-t border-orange-700 mb-8" />
-      <div className="mb-8" style={{ marginBottom: "48px" }} />
-      <div className="bg-white p-8 mb-8">
-        <h2 className="text-3xl font-semibold mb-6 bg-white text-gray-purple">
-          Project Coordinator
-        </h2>
-        {pc.map((member, index) => (
-          <TeamMember key={index} member={member} />
-        ))}
-      </div>
-
-      <div className="bg-white p-8 mb-8">
-        <h1 className=" text-2xl text-gray-purple w-84 bg-transparent font-semibold">
-          Contact Us{" "}
-        </h1>
-        <div className="mb-8" style={{ marginBottom: "10px" }} />
-
-        <p className=" text-gray-purple w-84 bg-transparent">
-          If you have any questions or would like to be in touch with a member
-          of the research team, please email us at{" "}
-          <Link
-            href="mailto:familiesandschools@brown.edu"
-            className="font-medium text-blue-600 hover:underline dark:text-blue-500 bg-transparent"
-          >
-            familiesandschools@brown.edu
-          </Link>
-          . To contact the study’s principal investigator, David Rangel, please
-          email{" "}
-          <Link
-            href="mailto:david_rangel@brown.edu"
-            className="font-medium text-blue-600 hover:underline dark:text-blue-500 bg-transparent"
-          >
-            david_rangel@brown.edu
-          </Link>
-          .
-        </p>
+      
+      <div className="flex flex-row justify-center">
+        <div className="flex flex-col max-w-6xl">
+          <h1 className="text-4xl text-brown5 text-center font-semibold my-8">
+            Our Team
+          </h1>
+          <div className="bg-white p-8 mb-8">
+            <h2 className="text-3xl font-semibold mb-6 bg-white text-gray-purple">
+              Principal Investigator
+            </h2>
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
+            {pi.map((member, index) => (
+              <TeamMember key={index} member={member} />
+            ))}
+          </div>
+          <hr className="border-t border-orange-700 mb-8" />
+          <div className="mb-8" style={{ marginBottom: "48px" }} />
+          <div className="bg-white p-8 mb-8">
+            <h2 className="text-3xl font-semibold mb-6 bg-white text-gray-purple">
+              Research Assistants
+            </h2>
+            {team.map((member, index) => (
+              <TeamMember key={index} member={member} />
+            ))}
+          </div>
+          <hr className="border-t border-orange-700 mb-8" />
+          <div className="bg-white p-8 mb-8">
+            <h2 className="text-3xl font-semibold mb-6 bg-white text-gray-purple">
+              Project Coordinator
+            </h2>
+            {pc.map((member, index) => (
+              <TeamMember key={index} member={member} />
+            ))}
+          </div>
+          <div className="bg-white p-8 mb-8">
+            <h1 className=" text-2xl text-gray-purple w-84 bg-transparent font-semibold">
+              Contact Us{" "}
+            </h1>
+            <div className="mb-8" style={{ marginBottom: "10px" }} />
+            <p className=" text-gray-purple w-84 bg-transparent">
+              If you have any questions or would like to be in touch with a member
+              of the research team, please email us at{" "}
+              <Link
+                href="mailto:familiesandschools@brown.edu"
+                className="font-medium text-blue-600 hover:underline dark:text-blue-500 bg-transparent"
+              >
+                familiesandschools@brown.edu
+              </Link>
+              . To contact the study’s principal investigator, David Rangel, please
+              email{" "}
+              <Link
+                href="mailto:david_rangel@brown.edu"
+                className="font-medium text-blue-600 hover:underline dark:text-blue-500 bg-transparent"
+              >
+                david_rangel@brown.edu
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
       </div>
       <Footer />
     </div>
