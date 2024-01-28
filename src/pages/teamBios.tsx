@@ -48,7 +48,7 @@ const TeamBioPage: React.FC = () => {
           <h1 className="text-4xl text-brown5 text-center font-semibold my-8">
             Our Team
           </h1>
-          <div className="bg-white p-8 mb-8">
+          <div className="bg-white p-8">
             <h2 className="text-3xl font-semibold mb-6 bg-white text-gray-purple">
               Principal Investigator
             </h2>
@@ -57,9 +57,8 @@ const TeamBioPage: React.FC = () => {
               <TeamMember key={index} member={member} />
             ))}
           </div>
-          <hr className="border-t border-orange-700 mb-8" />
-          <div className="mb-8" style={{ marginBottom: "48px" }} />
-          <div className="bg-white p-8 mb-8">
+          <hr className="border-t border-orange-700 my-12" />
+          <div className="bg-white p-8">
             <h2 className="text-3xl font-semibold mb-6 bg-white text-gray-purple">
               Research Assistants
             </h2>
@@ -67,7 +66,7 @@ const TeamBioPage: React.FC = () => {
               <TeamMember key={index} member={member} />
             ))}
           </div>
-          <hr className="border-t border-orange-700 mb-8" />
+          <hr className="border-t border-orange-700 my-12" />
           <div className="bg-white p-8 mb-8">
             <h2 className="text-3xl font-semibold mb-6 bg-white text-gray-purple">
               Project Coordinator
