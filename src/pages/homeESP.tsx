@@ -2,8 +2,13 @@ import QualtricsButtonESP from "@/components/qualtricsButtonESP";
 import NavigationBarESP from "@/components/navigationBarESP";
 import ButtonLink from "@/components/buttonLink";
 import FooterESP from "@/components/footerESP";
+import Home from "./home";
 
-export default function Home() {
+export default function HomeESP() {
+  return <Home language="spanish" />
+}
+
+export function _HomeESP() {
   return (
     <div className="bg-white">
       <NavigationBarESP />
@@ -105,7 +110,7 @@ export default function Home() {
             </h1>
           </div>
 
-          <div className="mx-5 bg-brown3 w-full h-full inline-block justify-center rounded p-8">
+          <div className="mx-5 bg-brown3 justify-center rounded p-8">
             <div className="m-auto rounded-full h-16 w-16 bg-brown4 flex justify-center">
               <h1 className="bg-transparent mt-3 font-bold text-3xl text-brown5">
                 3.
