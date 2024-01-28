@@ -19,7 +19,7 @@ export default function Home() {
             implemented to strengthen collaboration and understanding between
             parents and educators, enhancing the overall educational environment?
           </p>
-          <hr className="h-0.5 w-60 my-6 bg-brown5 border-0 align-self-center"></hr>
+          <hr className="h-0.5 w-60 my-6 bg-brown5 border-0 self-center"></hr>
           <p className="bg-white mt-3 text-gray-purple">
             These are questions that the Families and Schools research study seeks
             to address through the perspectives of parents, teachers, and
