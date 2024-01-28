@@ -1,127 +1,119 @@
-import ButtonLink from "@/components/buttonLink";
-import Footer from "@/components/footer";
-import NavigationBar from "@/components/navigationBar";
-import QualtricsButton from "@/components/qualtricsButton";
+import ButtonLink from "@/components/buttonLink"
+import { CircleText } from "../components/circleText"
+import Footer from "@/components/footer"
+import NavigationBar from "@/components/navigationBar"
+import QualtricsButton from "@/components/qualtricsButton"
+import { HomePage } from "@/strings"
+import { PageProps } from "@/types"
+import NavigationBarESP from "@/components/navigationBarESP"
 
-export default function Home() {
+
+
+export default function Home({language: maybeLanguage}: PageProps) {
+
+  const language = maybeLanguage ?? 'english'
+
+  const strings = HomePage;
+
   return (
-    <div className="bg-white">
-      <NavigationBar />
+    <div className="bg-white flex flex-col">
+      {language === "english" ? <NavigationBar /> : <NavigationBarESP/> }
 
-      <div className="mt-6 bg-transparent w-full h-80 flex items-center px-5">
-        <div className="rounded bg-gradient-to-r from-brown1 to-brown2 w-full h-full items-center flex justify-center mr-3">
-          <h1 className="text-brown5 text-6xl w-1/2 m-auto bg-transparent font-julius title font-bold text-center">
-            Families and Schools Research Project
+      <div className="mt-6 w-full flex items-center">
+        <div className="flex rounded bg-gradient-to-r from-brown1 to-brown2 w-full items-center  justify-center mr-3 p-5 gap-8 flex-col md:flex-row">
+          <h1 className="text-brown5 md:text-6xl text-4xl font-julius title font-bold text-center flex-2 my-5 max-w-xl md:max-w-5xl">
+            {strings.header.title[language]}
           </h1>
-          <div className="rounded bg-brown3 w-1/3 h-4/5 grid items-center justify-center mx-7">
-            <h1 className="text-4xl text-gray-purple w-84 bg-transparent -mb-20 font-bold pb-5">
-              Qualtrics Interest Form
+          <div className="rounded bg-brown3 grid items-center justify-center mx-7 p-8 sm:p-16 flex-1 max-w-xl">
+            <h1 className="text-4xl text-gray-purple w-84 font-bold pb-5 text-center">
+            {strings.header.surveyTitle[language]}
             </h1>
-            <div className="bg-transparent flex justify-center -translate-y-8 scale-125">
-              <QualtricsButton />
+            <div className=" flex justify-center">
+              <QualtricsButton text={strings.header.surveyButton[language]} language={language} />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-light-gray mt-6 w-full h-72 flex items-center">
-        <div className="rounded bg-transparent w-1/3 h-full items-center grid justify-center mr-3">
-          <h1 className="text-3xl w-84 bg-transparent -mb-20 text-gray-purple font-bold">
-            The Project
+      <div className="bg-light-gray mt-6 flex flex-wrap py-8 md:py-16 md:justify-center gap-y-5 gap-x-20 px-5">
+
+        <div className="rounded items-center grid justify-center mr-3 gap-5">
+          <h1 className="text-3xl w-84 text-gray-purple font-bold">
+          {strings.body.header[language]}
           </h1>
-          <div className="-translate-y-10">
-          <ButtonLink text="About Project" url="/about"/>
+          <div>
+            <ButtonLink text={strings.body.aboutButton[language]} url={language === "english" ? "/about" : "/aboutESP" } />
           </div>
         </div>
 
-        <div className="rounded bg-transparent w-2/3 h-full grid items-center justify-center">
-          <h1 className="text-slate-800 text-xl w-100 bg-transparent mr-10">
-            Welcome to the <text className="font-semibold">Families and Schools Project</text>, a research study exploring the collaborative relationships between 
-            parents and educators in shaping students’ educational success. Our goal is to uncover how the <text className="font-semibold">bonds</text> between 
-            parents and their children&apos;s schools <text className="font-semibold">shape</text> the landscape of educational success.{" "}
-          </h1>
+        <div className="rounded grid items-center justify-center">
+          {strings.body.welcome[language]}
         </div>
       </div>
 
-      <div className="bg-light-gray w-full h-72 flex items-center justify-center">
-        <div className="rounded bg-transparent border-4 border-brown5 w-full p-5 mx-16 mb-16">
-          <p className="text-slate-800 text-xl w-100 bg-transparent mb-5">
-            The voices of parents and educators are at the heart of our research. By conducting comprehensive interviews with parents, we aim to gain nuanced insights into their experiences and perceptions within the educational system. Additionally, interviews with school faculty and administrators provide us with diverse perspectives on the role and impact of parental involvement.
+      <div className="bg-light-gray w-full flex items-center justify-center">
+        <div className="rounded border-4 border-brown5 p-5 mx-4 mb-16">
+          <p className="text-slate-800 text-xl w-100 mb-5 max-w-prose">
+            {strings.body.description.paragraph1[language]}
           </p>
-          <p className="text-slate-800 text-xl w-100 bg-transparent">
-            In exploring these dynamics, our project ultimately seeks to identify effective strategies that enhance student learning experiences and understand the practices that support academic and personal growth. We are committed to developing innovative, inclusive approaches that enrich the educational journey for every student.
+          <p className="text-slate-800 text-xl w-100 max-w-prose">
+          {strings.body.description.paragraph2[language]}
           </p>
         </div>
       </div>
-      <div className="my-10 inline-block bg-transparent w-full h-full justify-center">
-      <div className="flex items-center justify-center bg-transparent w-full">
-  <img
-    src="/photos/home1.png"
-    className="h-25"
-    alt="Home Image"
-  />
-</div>
-</div>
+      <div className="my-10 w-full justify-center">
+        <div className="flex items-center justify-center w-full">
+          <img src="/photos/home1.png" alt="Home Image" className="rounded" />
+        </div>
+      </div>
 
-      <div className="my-10 inline-block bg-transparent w-full h-full justify-center">
-        <div className="m-auto bg-brown1 w-96 h-24 pt-7 flex justify-center rounded">
-          <h1 className="text-3xl text-gray-purple w-84 bg-transparent -mb-20 font-bold">
-            Our Research Values
+      <div className="my-10 items-center flex flex-col">
+        <div className="bg-brown1 p-8 flex rounded">
+          <h1 className="text-3xl text-gray-purple font-bold">
+            {strings.values.title[language]}
           </h1>
         </div>
 
-        <div className="flex bg-transparent mt-10 h-96 w-full">
-          <div className="mx-5 bg-brown1 w-full h-full inline-block justify-center rounded p-8">
-            <div className="m-auto rounded-full h-16 w-16 bg-brown4 flex justify-center">
-              <h1 className="bg-transparent mt-3 font-bold text-3xl text-brown5">
-                1.
+        <div className="flex flex-row mt-10 flex-wrap justify-center gap-10">
+          <div className="bg-brown1 flex flex-col justify-center rounded p-8 max-w-md items-center">
+            <CircleText content={"1"}/>
+
+            <div className="my-5 bg-white bg-opacity-75 px-10 border-2 border-brown5 py-2 flex justify-center rounded justify-self-stretch">
+              <h1 className="text-xl text-gray-purple font-bold">
+                {strings.values.value1.title[language]}
               </h1>
             </div>
 
-            <div className="my-5 m-auto bg-white bg-opacity-75 w-auto px-10 border-2 border-brown5 h-12 pt-2 flex justify-center rounded">
-              <h1 className="text-xl text-gray-purple w-84 bg-transparent -mb-20 font-bold">
-                Transparency
-              </h1>
-            </div>
-
-            <h1 className="text-brown5 w-84 bg-transparent text-center">
-              We value open and clear communication with the parents, educators, and schools we partner with. Participants will be in direct contact with research team members and choose how much information to share. 
+            <h1 className="text-brown5 text-center max-w-prose">
+              {strings.values.value1.description[language]}
             </h1>
           </div>
 
-          <div className="mx-5 bg-brown2 w-full h-full inline-block justify-center rounded p-8">
-            <div className="m-auto rounded-full h-16 w-16 bg-brown4 flex justify-center">
-              <h1 className="bg-transparent mt-3 font-bold text-3xl text-brown5">
-                2.
+          <div className="bg-brown1 flex flex-col justify-center rounded p-8 max-w-md items-center">
+            <CircleText content={"2"}/>
+
+            <div className="my-5 bg-white bg-opacity-75 px-10 border-2 border-brown5 py-2 flex justify-center rounded justify-self-stretch">
+              <h1 className="text-xl text-gray-purple font-bold">
+                {strings.values.value2.title[language]}
               </h1>
             </div>
 
-            <div className="bg-opacity-75 my-5 m-auto bg-white w-auto px-10 border-2 border-brown5 h-12 pt-2 flex justify-center rounded">
-              <h1 className="text-xl text-gray-purple bg-transparent -mb-20 font-bold">
-                Security & Privacy
-              </h1>
-            </div>
-
-            <h1 className="text-brown5 w-84 bg-transparent text-center">
-              We value protecting participant information and maintaining privacy. We take several steps to ensure participants&apos; confidentiality in adherence to Brown University&apos;s Institutional Review Board.
+            <h1 className="text-brown5 text-center max-w-prose">
+              {strings.values.value2.description[language]}
             </h1>
           </div>
 
-          <div className="mx-5 bg-brown3 w-full h-full inline-block justify-center rounded p-8">
-            <div className="m-auto rounded-full h-16 w-16 bg-brown4 flex justify-center">
-              <h1 className="bg-transparent mt-3 font-bold text-3xl text-brown5">
-                3.
+          <div className="bg-brown1 flex flex-col rounded p-8 max-w-md items-center">
+            <CircleText content={"3"}/>
+
+            <div className="my-5 bg-white bg-opacity-75 px-10 border-2 border-brown5 py-2 flex justify-center rounded justify-self-stretch">
+              <h1 className="text-xl text-gray-purple font-bold">
+                {strings.values.value3.title[language]}
               </h1>
             </div>
 
-            <div className="bg-opacity-75 my-5 m-auto bg-white w-auto px-10 border-2 border-brown5 h-12 pt-2 flex justify-center rounded">
-              <h1 className="text-xl text-gray-purple w-84 bg-transparent -mb-20 font-bold">
-                Catalyzing Positive Change
-              </h1>
-            </div>
-
-            <h1 className="text-brown5 w-84 bg-transparent text-center">
-              We value our partnerships with participants as foundations for studying and building school communities that better serve students, families, and educators.
+            <h1 className="text-brown5 text-center max-w-prose">
+              {strings.values.value3.description[language]}
             </h1>
           </div>
         </div>
@@ -129,5 +121,5 @@ export default function Home() {
 
       <Footer />
     </div>
-  );
+  )
 }

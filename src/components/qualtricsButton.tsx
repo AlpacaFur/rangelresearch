@@ -1,11 +1,12 @@
 import ButtonLink from "@/components/buttonLink";
+import { Language } from "@/types";
 import React from "react";
 
-const QualtricsButton = () => {
+const QualtricsButton = ({text, language}: {text: string, language: Language}) => {
   return (
     <ButtonLink
-      text="Qualtrics Survey"
-      url="/about#survey-block"
+      text={text}
+      url={language === "english" ? "/about#survey-block" : "/aboutESP#survey-block"}
     />
   );
 };
