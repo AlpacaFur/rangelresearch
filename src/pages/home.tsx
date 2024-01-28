@@ -1,5 +1,5 @@
 import ButtonLink from "@/components/buttonLink"
-import { CircleText } from "../components/circleText"
+import { CircleText } from "@/components/CircleText"
 import Footer from "@/components/footer"
 import NavigationBar from "@/components/navigationBar"
 import QualtricsButton from "@/components/qualtricsButton"
