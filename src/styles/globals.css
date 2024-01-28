@@ -7,18 +7,11 @@
 :root {
   --font-lato: ${lato.style.fontFamily};
   --font-julius: ${julius.style.fontFamily};
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: rgb(0, 0, 0);
+  --background-start-rgb: rgb(227, 230, 231);
+  --background-end-rgb: rgb(255, 255, 255);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 @font-face {
   font-family: 'Julius Sans One';
   src: url('JuliusSansOne-Regular.woff2') format('woff2'),
@@ -36,10 +29,5 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #f0f0f0;
 }
