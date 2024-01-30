@@ -9,6 +9,16 @@ interface StringsData {
   [x: string]: StringContents;
 }
 
+export const LanguageSelector = {
+  english: "?Q_lang=en",
+  spanish: "?Q_lang=es",
+}
+
+export const SurveyURLs = {
+  parents: "https://brown.co1.qualtrics.com/jfe/form/SV_2seiVuFl1tCmNim",
+  teachersAndPrincipals: "https://brown.co1.qualtrics.com/jfe/form/SV_0kObq1w2iHm0wyq"
+}
+
 export const HomePage = {
   header: {
     title: {
@@ -16,12 +26,12 @@ export const HomePage = {
       spanish: "Estudio de Familias y Escuelas"
     },
     surveyTitle: {
-      english: "Qualtrics Interest Form",
-      spanish: "Qualtrics Encuesta de Interés"
+      english: "Interested in Participating?",
+      spanish: "¿Interesada en participar?"
     },
     surveyButton: {
-      english: "Qualtrics Survey",
-      spanish: "Encuesta Qualtrics"
+      english: "Click here",
+      spanish: "Haga clic aquí"
     },
   },
   body: {

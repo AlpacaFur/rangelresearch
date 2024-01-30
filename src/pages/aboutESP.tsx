@@ -1,7 +1,7 @@
+import ButtonLink from "@/components/buttonLink"
 import FooterESP from "@/components/footerESP"
 import NavigationBarESP from "@/components/navigationBarESP"
-import ParentsSurveyButtonESP from "@/components/parentsSurveyBtnESP"
-import PrincipalsAndTeachersSurveyButtonESP from "@/components/principalsTeachersSurveyBtnESP"
+import { LanguageSelector, SurveyURLs } from "@/strings"
 
 export default function Home() {
   return (
@@ -60,56 +60,68 @@ export default function Home() {
             subvención de La Fundación Spencer.
           </p>
         </div>
-        </div>
-        <div className="my-10 flex flex-col justify-center items-center">
-          <div className="flex h-64 justify-center gap-5 max-w-4xl">
-            <div className="bg-brown1 h-64 rounded">
-              <img
-                src="/photos/about1.jpeg"
-                className="h-full object-cover rounded"
-                alt="..."
-              />
-            </div>
-
-            <div className="bg-brown1 h-64 rounded">
-              <img
-                src="/photos/about2.png"
-                className="h-full object-cover rounded"
-                alt="..."
-              />
-            </div>
-
-            <div className="bg-brown1 h-64 rounded">
-              <img
-                src="/photos/about3.jpeg"
-                className="h-full object-cover rounded"
-                alt="..."
-              />
-            </div>
+      </div>
+      <div className="my-10 flex flex-col justify-center items-center">
+        <div className="flex h-64 justify-center gap-5 max-w-4xl">
+          <div className="bg-brown1 h-64 rounded">
+            <img
+              src="/photos/about1.jpeg"
+              className="h-full object-cover rounded"
+              alt="..."
+            />
           </div>
+
+          <div className="bg-brown1 h-64 rounded">
+            <img
+              src="/photos/about2.png"
+              className="h-full object-cover rounded"
+              alt="..."
+            />
+          </div>
+
+          <div className="bg-brown1 h-64 rounded">
+            <img
+              src="/photos/about3.jpeg"
+              className="h-full object-cover rounded"
+              alt="..."
+            />
+          </div>
+        </div>
         <div
           className="flex-col bg-white mt-7 flex justify-center items-center p-10 max-w-4xl self-center w-full"
           id="survey-block"
         >
-          <h1 className="text-4xl text-brown5 w-84 bg-transparent font-semibold">
-            ¿Interesada en participar?
-          </h1>
+          <div className="max-w-prose">
+            <h1 className="text-4xl text-brown5 w-84 bg-transparent font-semibold">
+              ¿Interesada en participar?
+            </h1>
 
-          <p className="bg-white mt-5 text-gray-purple">
-            ¡Queremos saber por ustedes, padres y educadores de la escuela
-            primaria de San Antonio! Complete la encuesta para tener la
-            oportunidad de compartir sus experiencias. Un miembro del equipo de
-            investigación se comunicará con los seleccionados para una
-            entrevista para programar una entrevista de 60 minutos.
-          </p>
+            <p className="mt-5 font-bold text-gray-purple">
+              Complete la encuesta y, si es seleccionado, reciba $40.
+            </p>
 
-          <div className="flex justify-center flex-wrap gap-5 mt-5">
-            <div className="flex justify-center">
-              <ParentsSurveyButtonESP />
-            </div>
+            <p className="bg-white mt-5 text-gray-purple">
+              ¡Queremos saber por ustedes, padres y educadores de la escuela
+              primaria de San Antonio! Complete la encuesta para tener la
+              oportunidad de compartir sus experiencias. Un miembro del equipo
+              de investigación se comunicará con los seleccionados para una
+              entrevista para programar una entrevista de 60 minutos.
+            </p>
 
-            <div className="flex justify-center">
-              <PrincipalsAndTeachersSurveyButtonESP />
+            <div className="flex justify-center flex-wrap gap-5 mt-5">
+              <div className="flex justify-center">
+                <ButtonLink
+                  text="ENCUESTA DE INTERÉS DE LOS PADRES"
+                  url={SurveyURLs.parents + LanguageSelector.spanish}
+                />
+              </div>
+
+              <div className="flex justify-center">
+                <ButtonLink
+                  text="ENCUESTA DE INTERÉS DE LOS EDUCADORES"
+                  url={SurveyURLs.teachersAndPrincipals + LanguageSelector.spanish}
+                />
+              </div>
             </div>
           </div>
         </div>
